@@ -1,0 +1,21 @@
+[project]
+name = "ott-brain"
+version = "0.1.0"
+description = "Personal movie discovery (V1) — Streamlit + SQLite + TMDB"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "streamlit>=1.32.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ott_brain"]
+
+[tool.uv]
+package = true

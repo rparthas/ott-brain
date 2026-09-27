@@ -1,5 +1,7 @@
 # Story index
 
+**Status column:** see [STATUS.md](STATUS.md) for `done` / `todo` (source of truth).
+
 | ID | Title | Priority | Epic |
 |----|-------|----------|------|
 | OTT-0-01 | Movies only (no TV V1) | — | E0 |
