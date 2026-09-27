@@ -24,6 +24,10 @@ Open the URL Streamlit prints (usually http://localhost:8501). No login — sing
 | `TMDB_API_KEY` | Required for search and metadata sync |
 | `OTT_BRAIN_DB_PATH` | SQLite file path (default: `./data/ott_brain.db`) |
 | `MOVIE_METADATA_TTL_HOURS` | Skip TMDB re-fetch when row is newer than this (default: 168) |
+| `PROVIDER_CACHE_TTL_HOURS` | Skip TMDB provider re-fetch when cache is newer (default: 168) |
+| `AVAILABILITY_BACKEND` | `tmdb` (default) or `watchmode` (stub; enable when TMDB IN coverage is insufficient) |
+
+Run offline tests: `uv run python -m unittest discover -s tests -v`
 
 ## Product backlog
 

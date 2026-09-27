@@ -33,3 +33,11 @@ def movie_metadata_ttl_hours() -> float:
         return float(raw)
     except ValueError:
         return 168.0
+
+
+def provider_cache_ttl_hours() -> float:
+    raw = os.getenv("PROVIDER_CACHE_TTL_HOURS", "168").strip()
+    try:
+        return float(raw)
+    except ValueError:
+        return 168.0

@@ -5,8 +5,8 @@
 | ID | Status | Epic | PRD phase | Goal |
 |----|--------|------|-----------|------|
 | E1 | done | Foundation & data layer | Phase 1 | Runnable app shell, SQLite schema, TMDB search |
-| E2 | todo | India OTT availability | Phase 2 | Provider data for IN, user subscriptions, cache |
-| E3 | todo | Onboarding & watch history | Phase 3 | Bootstrap taste without heavy manual profiling |
+| E2 | done | India OTT availability | Phase 2 | Provider data for IN, user subscriptions, cache |
+| E3 | done | Onboarding & watch history | Phase 3 | Bootstrap taste without heavy manual profiling |
 | E4 | todo | Natural-language discovery | Phase 4 (part) | Query → structured intent → candidate retrieval |
 | E5 | todo | Personalization & ranking | Phase 4 (part) | Filters, embeddings, Jev scoring, top 5 |
 | E6 | todo | Recommendations UI & explanations | Phase 4–5 | Cards, why strings, watch links |

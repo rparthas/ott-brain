@@ -48,10 +48,18 @@ def _get(path: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
     return response.json()
 
 
-def search_movies(query: str, page: int = 1) -> list[MovieSearchResult]:
+def search_movies(
+    query: str,
+    page: int = 1,
+    *,
+    year: int | None = None,
+) -> list[MovieSearchResult]:
     if not query.strip():
         return []
-    data = _get("/search/movie", {"query": query.strip(), "page": page})
+    params: dict[str, Any] = {"query": query.strip(), "page": page}
+    if year is not None:
+        params["primary_release_year"] = year
+    data = _get("/search/movie", params)
     results: list[MovieSearchResult] = []
     for item in data.get("results", []):
         release = item.get("release_date") or ""
@@ -73,6 +81,13 @@ def fetch_movie_details(tmdb_id: int) -> dict[str, Any]:
         f"/movie/{tmdb_id}",
         {"append_to_response": "keywords"},
     )
+
+
+def fetch_watch_providers(tmdb_id: int) -> dict[str, Any]:
+    data = _get(f"/movie/{tmdb_id}/watch/providers")
+    results = data.get("results") or {}
+    india = results.get("IN") or {}
+    return dict(india)
 
 
 def normalize_movie_row(details: dict[str, Any]) -> dict[str, Any]:

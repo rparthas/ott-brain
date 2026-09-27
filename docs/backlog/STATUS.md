@@ -3,7 +3,7 @@
 **Purpose:** Canonical progress tracker for OTT Brain V1. Update this file when you finish stories or epics so future sessions know where to continue.
 
 **Last updated:** 2026-09-27  
-**Next epic (sprint order):** E2 — India OTT availability ([EPICS.md](EPICS.md), stories OTT-2-01 … OTT-2-05)  
+**Next epic (sprint order):** E10 + E4 + E5 per [EPICS.md](EPICS.md) (AI pipeline); or continue sequential **E4** after E2/E3.  
 **Run the app:** `uv sync` → `.env` with `TMDB_API_KEY` → `uv run streamlit run app.py` (see [README](../../README.md)).
 
 ## Stack (as built)
@@ -15,6 +15,12 @@
 | DB init | `scripts/init_db.py`, schema in `ott_brain/database.py` |
 | TMDB client | `ott_brain/tmdb.py` |
 | Movie cache / sync | `ott_brain/movies.py` |
+| IN providers + cache | `ott_brain/providers_service.py`, `ott_brain/availability/` |
+| Subscriptions / filters | `ott_brain/subscriptions.py`, `ott_brain/filters.py` |
+| Watch history / import | `ott_brain/watch_history.py` |
+| Feedback / rejections | `ott_brain/feedback.py` |
+| Onboarding state | `ott_brain/onboarding.py`, `ott_brain/preferences.py` |
+| Offline tests | `tests/test_e2_e3.py` |
 | Dependencies | `pyproject.toml` + `uv.lock` (**uv**, not pip/requirements.txt) |
 
 ## Epic summary
@@ -23,8 +29,8 @@
 |------|--------|-------|
 | E0 | n/a | Non-goals / traceability only |
 | E1 | **done** | Foundation & data layer |
-| E2 | **todo** | India OTT availability |
-| E3 | todo | Onboarding & watch history |
+| E2 | **done** | India OTT availability |
+| E3 | **done** | Onboarding & watch history |
 | E4 | todo | Natural-language discovery |
 | E5 | todo | Personalization & ranking |
 | E6 | todo | Recommendations UI & explanations |
@@ -46,16 +52,16 @@ Status: `done` · `todo` · `n/a` (traceability)
 | OTT-1-03 | done | E1 |
 | OTT-1-04 | done | E1 |
 | OTT-1-05 | done | E1 |
-| OTT-2-01 | todo | E2 |
-| OTT-2-02 | todo | E2 |
-| OTT-2-03 | todo | E2 |
-| OTT-2-04 | todo | E2 |
-| OTT-2-05 | todo | E2 |
-| OTT-3-01 | todo | E3 |
-| OTT-3-02 | todo | E3 |
-| OTT-3-03 | todo | E3 |
-| OTT-3-04 | todo | E3 |
-| OTT-3-05 | todo | E3 |
+| OTT-2-01 | done | E2 |
+| OTT-2-02 | done | E2 |
+| OTT-2-03 | done | E2 |
+| OTT-2-04 | done | E2 |
+| OTT-2-05 | done | E2 |
+| OTT-3-01 | done | E3 |
+| OTT-3-02 | done | E3 |
+| OTT-3-03 | done | E3 |
+| OTT-3-04 | done | E3 |
+| OTT-3-05 | done | E3 |
 | OTT-4-01 | todo | E4 |
 | OTT-4-02 | todo | E4 |
 | OTT-4-03 | todo | E4 |
